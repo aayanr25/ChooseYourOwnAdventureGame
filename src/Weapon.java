@@ -22,6 +22,7 @@ public class Weapon {
     public int getIntelligence() {
         return intelligence;
     }
+
     public boolean isValidWeapon(People person, Weapon weapon) {
         int numStats = 0;
         if (weapon.getStrength() > person.getStrength()) {
@@ -38,4 +39,14 @@ public class Weapon {
         }
         return false;
     }
+
+    public void powerUp() {
+        if (strength < 10) {
+            strength = 15;
+        } if (speed < 10) {
+            speed = 15;
+        }
+    }
+
+
 }
