@@ -23,7 +23,7 @@ public class Weapon {
         return intelligence;
     }
 
-    public boolean isValidWeapon(People person, Weapon weapon) {
+    public boolean isValidWeapon(Target person, Weapon weapon) {
         int numStats = 0;
         if (weapon.getStrength() > person.getStrength()) {
             numStats ++;
