@@ -1,11 +1,9 @@
 public class Weapon {
     private int strength;
-    private String name;
     private int speed;
     private int adaptability;
     private int intelligence;
-    public Weapon(String name, int strength, int speed, int adaptability, int intelligence) {
-        this.name = name;
+    public Weapon(int strength, int speed, int adaptability, int intelligence) {
         this.strength = strength;
         this.speed = speed;
         this.adaptability = adaptability;
@@ -25,21 +23,15 @@ public class Weapon {
         return intelligence;
     }
 
-    public Weapon seed = new Weapon ("Watermelon seed", 3, 7, 9, 2);
-    public Weapon candlestick = new Weapon("Candlestick", 13, 9, 11, 13);
-    public Weapon snickers = new Weapon("Snickers Bar", 10, 18, 17, 8);
-    public Weapon lava = new Weapon ("Bucket of Lava", 24, 16, 27, 24);
-    public Weapon alienGun = new Weapon("Alien Ray Gun", 35, 31, 27, 31);
-
-    public boolean isValidWeapon(Target target, Weapon weapon) {
+    public boolean isValidWeapon(Target person, Weapon weapon) {
         int numStats = 0;
-        if (weapon.getStrength() > target.getStrength()) {
+        if (weapon.getStrength() > person.getStrength()) {
             numStats ++;
-        } if (weapon.getSpeed() > target.getSpeed()) {
+        } if (weapon.getSpeed() > person.getSpeed()) {
             numStats ++;
-        } if (weapon.getAdaptability() > target.getAdaptability()) {
+        } if (weapon.getAdaptability() > person.getAdaptability()) {
             numStats ++;
-        } if (weapon.getIntelligence() > target.getIntelligence()) {
+        } if (weapon.getIntelligence() > person.getIntelligence()) {
             numStats ++;
         }
         if (numStats > 2) {
