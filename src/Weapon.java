@@ -1,15 +1,21 @@
 public class Weapon {
     private int strength;
+    private String name;
     private int speed;
     private int adaptability;
     private int intelligence;
-    public Weapon(int strength, int speed, int adaptability, int intelligence) {
+
+    public Weapon(String name, int strength, int speed, int adaptability, int intelligence) {
+        this.name = name;
         this.strength = strength;
         this.speed = speed;
         this.adaptability = adaptability;
         this.intelligence = intelligence;
     }
 
+    public String getName() {
+        return name;
+    }
     public int getStrength() {
         return strength;
     }
@@ -23,23 +29,7 @@ public class Weapon {
         return intelligence;
     }
 
-    public boolean isValidWeapon(Target person, Weapon weapon) {
-        int numStats = 0;
-        if (weapon.getStrength() > person.getStrength()) {
-            numStats ++;
-        } if (weapon.getSpeed() > person.getSpeed()) {
-            numStats ++;
-        } if (weapon.getAdaptability() > person.getAdaptability()) {
-            numStats ++;
-        } if (weapon.getIntelligence() > person.getIntelligence()) {
-            numStats ++;
-        }
-        if (numStats > 2) {
-            return true;
-        }
-        return false;
-    }
-
+    // increases effectiveness of the chosen weapon.
     public void powerUp() {
         if (strength < 10) {
             strength = 15;
@@ -47,6 +37,4 @@ public class Weapon {
             speed = 15;
         }
     }
-
-
 }
