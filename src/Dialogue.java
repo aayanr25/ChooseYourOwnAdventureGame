@@ -49,11 +49,11 @@ public class Dialogue {
         System.out.println("Randy is your personal assistant in your quest to eliminate all of your targets.");
         System.out.println("Press enter to continue.");
         scan.nextLine();
-        }
+    }
 
 
 
-// these two methods list the attributes of each target and each weapon, respectively.
+    // these two methods list the attributes of each target and each weapon, respectively.
     public String listOutTarget(Target target) {
         if (target.isAlive()) {
             String a = target.getName();
@@ -117,7 +117,7 @@ public class Dialogue {
         }
     }
 
-// returns true if all the targets have been eliminated.
+    // returns true if all the targets have been eliminated.
     public boolean isGameOver() {
         if (!(gameOver)) {
             if (!(barthy.isAlive() || michael.isAlive() || piper.isAlive() || jenna.isAlive() || jonah.isAlive())) {
@@ -140,16 +140,24 @@ public class Dialogue {
         int optionChoice = scan.nextInt();
         if (optionChoice == 1) {
             System.out.println("TARGET 1:\n" + listOutTarget(barthy));
+            Buffer.buffer(500);
             System.out.println("TARGET 2:\n" + listOutTarget(michael));
+            Buffer.buffer(500);
             System.out.println("TARGET 3:\n" + listOutTarget(piper));
+            Buffer.buffer(500);
             System.out.println("TARGET 4:\n" + listOutTarget(jenna));
+            Buffer.buffer(500);
             System.out.println("TARGET 5:\n" + listOutTarget(jonah));
             System.out.println();
         } else if (optionChoice == 2) {
             System.out.println("WEAPON 1:\n" + listOutWeapon(seed));
+            Buffer.buffer(500);
             System.out.println("WEAPON 2:\n" + listOutWeapon(candlestick));
+            Buffer.buffer(500);
             System.out.println("WEAPON 3:\n" + listOutWeapon(snickers));
+            Buffer.buffer(500);
             System.out.println("WEAPON 4:\n" + listOutWeapon(lava));
+            Buffer.buffer(500);
             System.out.println("WEAPON 5:\n" + listOutWeapon(alienGun));
             System.out.println();
         } else if (optionChoice == 3) {
